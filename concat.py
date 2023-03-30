@@ -99,8 +99,8 @@ else:
                 df_concat_list[input_dataframe[i].name] = df_list[input_dataframe[i].name][selected_columns]
                 df_list[input_dataframe[i].name][selected_columns]
                 # st.write(len(df_list[input_dataframe[i].name][selected_columns]))
-            except ValueError:
-                st.error('**' + input_dataframe[i].name + ':** Verifique se as colunas selecionadas fazem parte deste arquivo', icon="🚨")
+            except KeyError:
+                st.error('**' + input_dataframe[i].name + ':** Arquivo não considerado, verifique se as colunas selecionadas fazem parte deste arquivo', icon="🚨")
 
         try:
             # st.write(df_concat_list.values())
